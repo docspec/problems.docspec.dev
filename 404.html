@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DocSpec problem types</title>
+  <script>
+    // Unknown path: land on the matching anchor of the one page, if any.
+    var name = location.pathname.replace(/^\/+|\/+$/g, "");
+    location.replace(/^[a-z0-9-]+$/.test(name) ? "/#" + name : "/");
+  </script>
+</head>
+<body>
+  <p>Not found. See <a href="/">https://problems.docspec.dev/</a>.</p>
+</body>
+</html>
