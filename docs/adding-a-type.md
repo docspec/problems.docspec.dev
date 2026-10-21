@@ -20,7 +20,7 @@ All in `crates/docspec-http`:
 4. Commit, push to `main`; Pages deploys in about a minute. Verify with:
 
 ```sh
-curl -sI https://problems.docspec.dev/<name> | head -1      # HTTP/2 200
+curl -sIL https://problems.docspec.dev/<name> | grep -c 'HTTP/2 200'   # 1
 curl -s https://problems.docspec.dev/ | grep -c 'id="<name>"'  # 1
 ```
 
