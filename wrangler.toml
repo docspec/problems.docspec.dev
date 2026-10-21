@@ -1,0 +1,4 @@
+# Cloudflare Pages: static site, no build step. `npx wrangler pages deploy` reads this.
+name = "problems-docspec-dev"
+pages_build_output_dir = "."
+compatibility_date = "2026-10-01"
