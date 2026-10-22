@@ -32,3 +32,5 @@ A problem type is the `type` member of an RFC 9457 problem body. Its URI is a pe
 | --- | --- | --- |
 | `malformed-input` | 422 | `Parse`, `Json` |
 | `unsupported-content` | 422 | `Other`, `Io`, any future kind |
+| `resource-limit` | 422 | `Limit` |
+| `conversion-timeout` | 503 | the server's conversion time limit (not a core error kind) |

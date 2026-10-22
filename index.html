@@ -46,11 +46,31 @@
     </dl>
   </section>
 
+  <section id="resource-limit">
+    <h2><a href="#resource-limit">resource-limit</a></h2>
+    <dl>
+      <dt>Type</dt><dd><code>https://problems.docspec.dev/resource-limit</code></dd>
+      <dt>Status</dt><dd>422 Unprocessable Content</dd>
+      <dt>When</dt><dd>The document is within its format but beyond a bound of this build: a DOCX package part or XML node over 64&nbsp;MiB, or tables nested deeper than 100. Raised for the core <code>Limit</code> error kind.</dd>
+      <dt>What to do</dt><dd>The document is the problem. <code>detail</code> names the cap; a document this large or deep is almost always a crafted one.</dd>
+    </dl>
+  </section>
+
+  <section id="conversion-timeout">
+    <h2><a href="#conversion-timeout">conversion-timeout</a></h2>
+    <dl>
+      <dt>Type</dt><dd><code>https://problems.docspec.dev/conversion-timeout</code></dd>
+      <dt>Status</dt><dd>503 Service Unavailable, with <code>Retry-After</code></dd>
+      <dt>When</dt><dd>The conversion ran past the server's configured time limit and was stopped at its next event. The document may be fine; the server declined to spend more time on it.</dd>
+      <dt>What to do</dt><dd>Retry after the seconds in <code>Retry-After</code>, or ask the operator to raise <code>--conversion-timeout</code>. Repeated timeouts on one document mean it is too expensive for this server.</dd>
+    </dl>
+  </section>
+
   <section id="about-blank">
     <h2><a href="#about-blank">about:blank</a></h2>
     <dl>
       <dt>Type</dt><dd><code>about:blank</code></dd>
-      <dt>Status</dt><dd>400, 404, 405, 406, 415, 500</dd>
+      <dt>Status</dt><dd>400, 404, 405, 406, 413, 415, 500</dd>
       <dt>When</dt><dd>The status code is the whole meaning. The <code>title</code> is the HTTP reason phrase.</dd>
     </dl>
   </section>
